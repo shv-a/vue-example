@@ -1,0 +1,253 @@
+.office
+  height: 100%
+  min-height: 100vh
+  width: 100%
+  overflow: hidden
+  background-image: linear-gradient(135deg, #f5f7fb 0%, #dfe5ef 100%)
+  &_with-player
+    padding-bottom: 8rem
+  &__box
+    display: flex
+    justify-content: space-between
+    align-items: stretch
+    height: 100%
+    min-height: 100vh
+  &__content
+    max-width: 100%
+    width: 100%
+    padding: 0 16rem 0 16rem
+    position: relative
+    &.no-sidebar
+      padding: 0 24rem
+  &__top
+    line-height: 1
+
+  &__top-right
+    position: absolute
+    top: $section-padding-top
+    right: 10.5rem
+    height: $header-height
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    z-index: 7600
+    &.no-sidebar
+      right: 24rem
+
+  &__back
+    margin-bottom: 1.2rem
+    font-size: 2rem
+    height: 2.5rem
+    line-height: 2.5rem
+    letter-spacing: -.067rem
+    color: $color-blue
+    cursor: pointer
+    user-select: none
+    &:hover
+      opacity: .8
+
+    & > svg
+      height: 1.5rem
+      fill: $color-blue
+      margin-right: 1rem
+      display: inline-block
+      position: relative
+      top: .1rem
+
+    &_sm
+      font-size: 1.4rem
+      & > svg
+        height: 1.2rem
+
+  &__title
+    min-height: 3.6rem
+    margin-right: 3.2rem
+    display: inline-block
+    h1
+      color: #23282a
+      font-size: 3.6rem
+      font-weight: 500
+      margin: 0
+      white-space: nowrap
+      display: inline-block
+  &__slogan
+    display: inline-block
+    font-size: 1.3rem
+    font-weight: 300
+    color: $color-text-black
+    height: 4.4rem
+    line-height: 2.5rem
+    padding: 1.6rem 0 1rem
+    letter-spacing: -.04rem
+
+  .mobile-sidebar-btn
+    display: none
+
+  &__name
+    color: #4e585c
+    font-size: 1.6rem
+    line-height: 1.4
+    font-weight: 400
+    margin-left: auto
+    margin-right: 2rem
+    max-width: 32rem
+    display: inline-block
+    @include text-overflow
+
+  &__logout
+    cursor: pointer
+    color: $color-blue
+
+  .subscription-message
+    position: relative
+    width: 100%
+    min-height: 4.8rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    color: $color-text-black
+    margin: 2.7rem 0 1.6rem
+    padding: 0 1.6rem 0 4.8rem
+    border-radius: 5px
+    background: #fff
+    font-size: 1.4rem
+    letter-spacing: -0.039rem
+    a
+      color: #018edc
+      font-weight: 500
+      white-space: nowrap
+    p
+      padding-right: 2rem
+      img
+        position: absolute
+        left: 1.6rem
+        top: 50%
+        margin-top: -.8rem
+        +r($medium)
+          margin-top: -8px
+
+.section
+  &__content
+    padding: 3.3rem 0 14rem
+    &_bg
+      border-radius: 4px
+      width: 100%
+      padding-bottom: 0
+    &_profile
+      padding-top: 0
+
+    &_gallery
+      background: none
+      padding: 0
+
+  &__subtitle
+    color: #23282a
+    font-size: 2.6rem
+    &_centered
+      text-align: center
+    &_pad
+      padding: 0 2.4rem
+    &_bg
+      background: #fff
+      padding-top: 2.4rem
+      margin-top: 3.3rem
+      border-radius: 5px 5px 0 0
+
+.link
+  color: #018edc
+  font-size: 1.4rem
+  letter-spacing: -0.039rem
+  cursor: pointer
+
+.index-fade
+  position: fixed
+  z-index: 2200
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0,0,0,.3)
+
+
+.dark .office
+  &__content
+    background-color: $color-dark-theme-darker-blue
+  &__title
+    h1
+      color: $color-white
+  &__slogan
+      color: $color-white
+  &__name
+      color: $color-white
+
+
++r($small)
+  .office
+    &_with-player
+      padding-bottom: 80px
+    &__box
+      min-height: calc(100vh - 80px)
+    &__content
+      padding: 0 16px
+
+    &__top-right
+      position: relative
+      width: calc(100% + 32px)
+      max-width: calc(100% + 32px)
+      right: -16px
+      left: -16px
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      border-bottom: 1px solid #d7dae0
+      padding: 0 16px 0 0
+
+      .mobile-sidebar-btn
+        height: 63px
+        width: 63px
+        display: flex
+        align-items: center
+        justify-content: center
+        svg
+          .stroke
+            stroke: $color-text-black
+    &__title
+      min-height: 24px
+      h1
+        font-size: 24px
+
+    &__name
+      font-size: 16px
+      width: 150px
+      line-height: 1.4
+      @include text-overflow
+
+    &__slogan
+      display: none
+
+    &__back
+      font-size: 20px
+      & > svg
+        height: 15px
+.dark
+  .office
+    &__top-right
+      .mobile-sidebar-btn
+        svg
+          .stroke
+            stroke: #fff
+
+    .subscription-message
+      background: #0e2f68
+      color: $color-white
+
+.wider:not(.main)
+  .office
+    &__content
+      padding-left: 19.3rem
+
+.main
+  .office
+    &__top-right
+      display: none

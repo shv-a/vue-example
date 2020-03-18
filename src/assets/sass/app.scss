@@ -1,0 +1,22 @@
+//@import "node_modules/font-awesome/scss/font-awesome";
+
+@import "config/config";
+@import "layout/layout";
+
+@import "components/global/media-table";
+@import "components/global/pagination";
+@import "components/global/sidebar";
+@import "components/global/register";
+@import "components/global/range";
+@import "components/global/message";
+@import "components/global/loader";
+
+@import "pages/page-main";
+@import "pages/office";
+@import "pages/page-error";
+@import "pages/office/artists";
+@import "pages/office/audio";
+@import "pages/office/profile";
+@import "pages/office/stats";
+@import "pages/office/steps";
+@import "pages/office/upload";

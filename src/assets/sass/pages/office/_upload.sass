@@ -1,0 +1,73 @@
+
+
+
+.tiles
+  width: 100%
+  display: flex
+  flex-wrap: wrap
+
+
+
+  .tile
+    width: calc(50% - .8rem)
+    height: 11.7rem
+    border-radius: 5px
+    border: 2px solid #dee5f4
+    background-color: #fff
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    padding: 0 5.8rem 0 3.9rem
+    position: relative
+    cursor: pointer
+    &:nth-child(2n)
+      margin-left: 1.6rem
+
+    &__title
+      margin: 0 4.3rem
+      font-size: 2.6rem
+      color: #23282a
+      font-weight: 400
+
+    svg
+      width: 4.3rem
+      height: 4.8rem
+      &.stroke
+        path
+          stroke: #018edc
+      &.fill
+        path
+          fill: #018edc
+
+    .arrow
+      position: absolute
+      top: 50%
+      transform: translate(0, -50%) rotate(180deg)
+      right: 3.2rem
+      width: 1rem
+      height: 1.9rem
+      opacity: .6
+      svg
+        height: 100%
+        width: 100%
+        path
+          fill: #018edc
+    &:hover
+      .arrow
+        opacity: 1
+
+.upload-wrapper
+  opacity: 1
+  transition: opacity .2s ease-in
+
+.disabled-block
+  opacity: .5
+  pointer-events: none
+
+.upload-footer
+  height: 11.2rem
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  border-top: 2px solid #f5f7fb

@@ -1,0 +1,524 @@
+.step-message
+  padding: 2.9rem 2.2rem
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  min-height: 52rem
+.step-form-wrapper
+  margin-top: 4rem
+  .step-form
+    padding-top: 1.2rem
+.step-form
+  min-height: 32rem
+  &_pt
+    padding-top: 2.2rem
+.step-message,
+.step-form
+  background: #fff
+  border-radius: 4px
+  color: #23282a
+
+  &__title
+    font-size: 3.6rem
+    letter-spacing: -.1rem
+
+  &__text
+    max-width: 61%
+    font-size: 1.8rem
+    letter-spacing: -.05rem
+    line-height: 2.6rem
+    margin: 3rem 0 3.5rem
+
+  &__button
+    & > button
+      margin: 0 .75rem
+
+
+  &__form
+    width: 100%
+
+    &_mh
+      min-height: 45rem
+
+    &_np
+      padding: 0
+
+    &-header
+      height: 8.4rem
+      width: 100%
+      line-height: 8.4rem
+      font-size: 2.6rem
+      border-bottom: 1px solid #dee5f4
+      padding: 0 2.2rem
+      &_nb
+        border: none
+
+    &-body
+      width: 100%
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      flex-wrap: wrap
+      padding: 0 2.2rem 3.2rem
+
+      &_np
+        padding: 0
+
+      &.artists-section
+        border: 2px solid #dee5f4
+        background-color: #fff
+        border-radius: 5px
+        padding: 0 2.2rem 2.4rem
+
+        .artist
+          cursor: pointer
+          transition: box-shadow .3s ease
+          &:hover
+            box-shadow: 0 3rem 4.8rem -.7rem rgba(0,0,0,0.20)
+
+      .stations
+        display: flex
+        width: 100%
+        align-items: center
+        justify-content: flex-start
+        flex-wrap: wrap
+
+        &__station
+          width: calc(33% - .5rem)
+          border-radius: 5px
+          background-color: #f5f7fb
+          color: #80888c
+          position: relative
+          text-align: center
+          height: 6.9rem
+          line-height: 6.9rem
+          font-size: 1.8rem
+          cursor: pointer
+          margin-top: .8rem
+          margin-right: .8rem
+          &:nth-child(3n)
+            margin-right: 0
+          &.active
+            background: #018edc
+            color: #fff
+          &:after
+            position: absolute
+            top: 50%
+            left: 2.4rem
+            margin-top: -.5rem
+            display: block
+            content: ''
+            width: 1.4rem
+            height: 1rem
+            background: url(./assets/img/check_gray.svg) center center / contain no-repeat
+          &.active:after
+            background: url(./assets/img/check_white.svg) center center / contain no-repeat
+
+      &_block
+        display: block
+
+      &-text
+        font-size: 1.8rem
+        letter-spacing: -.05rem
+        margin-top: 2.2rem
+        width: 100%
+
+      &-col
+        width: 50%
+
+    &-footer
+      height: 11rem
+      width: 100%
+      display: flex
+      justify-content: space-between
+      align-items: center
+      border-top: 1px solid #dee5f4
+      padding: 0 2.2rem
+      &_nb
+        border: none
+      &_center
+        justify-content: center
+
+.step-count
+  color: #abbfc7
+  font-size: 1.6rem
+  letter-spacing: -0.044rem
+
+.artists
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  flex-wrap: wrap
+
+.artist
+  width: 17.2rem
+  height: 24.6rem
+  border-radius: 4px
+  margin-right: 1.6rem
+  position: relative
+  margin-top: 2rem
+  &:after
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    display: block
+    border-radius: 4px
+    content: ''
+    background:  linear-gradient(to bottom, rgba(0,0,0,0) 70%, rgba(0,0,0,1) 100%)
+    z-index: 150
+  &_add
+    background-color: #f5f7fb
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    transition: box-shadow .3s ease
+    &:hover
+      box-shadow: 0 3rem 4.8rem -.7rem rgba(0,0,0,0.20)
+    &:after
+      display: none
+    .artist__plus
+      width: 3.7rem
+      height: 3.7rem
+      &-caption
+        letter-spacing: -0.045rem
+        font-size: 1.6rem
+        color: #018edc
+        margin-top: 2rem
+
+  &__name
+    position: absolute
+    z-index: 160
+    bottom: 2rem
+    left: 0
+    right: 0
+    padding: 0 3rem
+    color: #fff
+    text-align: center
+    font-size: 1.6rem
+    line-height: 2rem
+    letter-spacing: -0.044rem
+
+  &__delete
+    position: absolute
+    z-index: 1
+    right: 0
+    top: 0
+    margin-top: -1.2rem
+    margin-right: -1.2rem
+    width: 2.4rem
+    height: 2.4rem
+    border: 2px solid #ffffff
+    background-image: linear-gradient(135deg, #d8203b 0%, #ef2929 100%)
+    border-radius: 2.4rem
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    box-shadow: 1px 1px 1px transparent
+    transition: box-shadow .3s ease
+    &:hover
+      box-shadow: 3px 3px 3px #ccc
+    & > svg
+      cursor: pointer
+      width: .8rem
+      height: .8rem
+
+.dropzone
+  width: 100%
+  margin-top: 2.5rem
+  position: relative
+  height: 31rem
+
+  &_lg
+    height: 43.5rem
+
+    .dropzone__interface
+      height: 100%
+
+  &_nm
+    margin: 0
+
+  &_pd24
+    padding: 2.4rem
+
+  &__interface
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border: 2px dashed #b0ced9
+    background-color: #f2f8fb
+    border-radius: 5px
+    padding: 3.6rem
+    position: relative
+
+  &__image
+    width: 7.5rem
+    height: 5.4rem
+
+  &__video-cover
+    width: 100%
+    height: 15rem
+
+    & > video
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &__filename
+    color: #23282a
+    font-size: 1.8rem
+    letter-spacing: -0.05rem
+    white-space: nowrap
+    text-overflow: ellipsis
+    overflow: hidden
+    margin: 1rem 0
+    padding: 0 1rem
+    line-height: 1.2
+    width: 100%
+    text-align: center
+    &_m0
+      margin: 0
+
+  &__caption
+    font-size: 2.4rem
+    margin: 2.5rem 0
+    letter-spacing: -.067rem
+    &.fs-36
+      font-size: 3.6rem
+
+  &__button
+    padding: .8rem 3.7rem .7rem
+    font-size: 1.4rem
+    color: #5b8cb4
+    border-radius: 4rem
+    border: 2px solid #75a1c5
+    white-space: nowrap
+    cursor: pointer
+    line-height: 1.8rem
+    transition: .3s ease
+    &:hover
+      box-shadow: 3px 3px 3px #ccc
+
+  &__tip
+    margin-top: 2.1rem
+    color: #abbfc7
+    letter-spacing: -0.039rem
+    line-height: 2.2rem
+    font-size: 1.4rem
+
+  .image
+    position: absolute
+    z-index: 4
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+      max-width: 200px
+      max-height: 200px
+
+    .delete
+      font-size: 2.2rem
+      display: inline-block
+      margin: 0 12px
+      cursor: pointer
+      &:hover
+        color: #777
+
+  &_mini
+    height: auto
+    .dropzone__interface
+      flex-direction: row
+      justify-content: space-between
+      background-color: transparent
+      padding: 1.9rem 2.5rem
+  &_video
+    width: 100%
+    height: 30rem
+    .dropzone__interface
+      height: 100%
+
+.play-button
+  position: relative
+  z-index: 4
+  width: 3.2rem
+  height: 3.2rem
+  min-width: 3.2rem
+  min-height: 3.2rem
+  border-radius: 1.6rem
+  background: linear-gradient(135deg, #43b0ea 0%, #018fdc 100%)
+  display: flex
+  justify-content: center
+  align-items: center
+  cursor: pointer
+  &:hover
+    background: #43b0ea
+  & > img,
+  & > svg
+    width: 1rem
+    height: 1.2rem
+    margin-left: .2rem
+  .pause
+    display: none
+    width: 2.5rem
+    height: 2.4rem
+    margin-left: 0
+  &.playing
+    .pause
+      display: block
+    .play
+      display: none
+  audio
+    display: none
+
+
+.upload-sections
+  width: 100%
+  display: flex
+  justify-content: space-between
+.upload-section
+  width: calc(50% - .8rem)
+  background-color: #f5f7fb
+  padding: 1.6rem 2.5rem
+  border-radius: 5px
+
+  &__label
+    font-size: 1.2rem
+    line-height: 1.5rem
+    color: #abbfc7
+    text-transform: uppercase
+    font-weight: 700
+    margin: 0
+
+  &__buttons
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin: .7rem 0 0 -.8rem
+    flex-wrap: wrap
+
+.operation-btn
+  padding: .8rem 3.5rem .7rem
+  border-radius: 3.5rem
+  font-size: 1.4rem
+  line-height: 1.8rem
+  background-image: linear-gradient(180deg, #02a9e6 0%, #018edc 100%)
+  white-space: nowrap
+  color: #fff
+  cursor: pointer
+  margin: .8rem
+  transition: .3s ease
+  &:hover
+    box-shadow: 2px 5px 5px rgba(0,0,0,.3)
+
+.file-input
+  position: absolute
+  z-index: 3
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  opacity: 0
+  cursor: pointer
+
+
+.step-input
+  width: calc(50% - 1.6rem)
+  margin-top: 2.2rem
+  position: relative
+  input
+    position: relative
+    .error-text,
+    .error-frame
+      display: none
+  &.validation-error
+    .error-frame
+      display: block
+      position: absolute
+      top: 2.1rem
+      height: 4.8rem
+      width: 100%
+      border: 1px solid #ff004b
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(255, 0, 75, 0.15)
+      border-radius: 5px
+      pointer-events: none
+    & > label
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .error-text
+        display: block
+        color: #ff004b
+        letter-spacing: -0.33px
+        font-size: 1.2rem
+
+
+  input:disabled
+    background: #fff
+  &:nth-child(2n)
+    margin-left: 3.2rem
+  &_full
+    width: 100%
+    margin: 2.2rem 0 0
+    &:nth-child(2n)
+      margin-left: 0
+
+  &_row
+    display: flex
+    justify-content: space-between
+    margin-top: 0
+    label
+      white-space: nowrap
+  &_30
+    width: 30%
+  &_40
+    width: 40%
+  &_70
+    width: 70%
+  &_hint
+    border-left: 2px solid #eaeaeb
+    color: #4e585c
+    letter-spacing: -0.033rem
+    font-size: 1.2rem
+    line-height: 1.6rem
+    height: 4.8rem
+    padding-left: 3.2rem
+    display: flex
+    align-items: center
+    margin-top: 4.3rem
+
+  & > label
+    display: block
+    padding-left: 1.6rem
+    font-size: 1.4rem
+    letter-spacing: -0.039rem
+    width: 100%
+    .highlight
+      color: #a76e6e
+
+  & > input
+    margin-top: .7rem
+    height: 4.8rem
+    width: 100%
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)
+    border: 2px solid #f5f7fb
+    border-radius: 5px
+    padding: 0 1.6rem
+    font-size: 1.4rem
+
+  .social-icon
+    width: auto
+    height: 1.4rem
+    margin-left: .8rem
+    display: inline-block
+    &_mt
+      margin-bottom: -.2rem

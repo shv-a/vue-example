@@ -1,0 +1,357 @@
+.profile
+  &__popup-wrapper
+    position: fixed
+    z-index: 8800
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(35,40,42, .95)
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+  &__popup
+    width: 53%
+    min-width: 600px
+    max-height: 80vh
+    cursor: default
+    &-header
+      display: flex
+      justify-content: space-between
+      align-items: center
+      font-size: 3.6rem
+      letter-spacing: -.12rem
+      font-weight: 500
+    &-close
+      width: 5.6rem
+      height: 5.6rem
+      border-radius: 4px
+      background: rgba(255,255,255,.1)
+      transition: .2s ease-in
+      cursor: pointer
+      display: flex
+      justify-content: center
+      align-items: center
+      img, svg
+        height: 2.6rem
+        width: 2.6rem
+      &:hover
+        background: rgba(255,255,255,.2)
+    &-body
+      margin-top: 1.8rem
+      border-radius: 4px
+      background-color: #fff
+      img
+        max-height: 60vh
+
+
+  &__main
+    display: flex
+    width: 100%
+    padding: 2.4rem
+    overflow: hidden
+    background: #fff
+    &-col
+      width: 100%
+      &_img
+        width: 18rem
+        min-width: 18rem
+        margin-right: 6.2rem
+        padding-top: .4rem
+
+  &__data
+    width: 100%
+    tr
+      height: 5rem
+      line-height: 5rem
+      border-bottom: 1px solid #e6eef1
+      width: 100%
+    td
+      color: #23282a
+      font-size: 1.6rem
+      letter-spacing: -0.044rem
+      width: 65%
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      padding-right: 2rem
+      &.multirow
+        white-space: normal
+        line-height: 2.4rem
+        padding: .8rem 0
+      &.label
+        width: 35%
+        font-size: 12px
+        font-weight: 700
+        color: #abbfc7
+        text-transform: uppercase
+        .highlight
+          color: #c7abab
+  &__data-btn
+    margin-top: 2.4rem
+
+  &__tiles
+    width: 100%
+    border-top: 1px solid #e6eef1
+    display: flex
+    align-items: stretch
+    background: #fff
+    &.rounded
+      border-radius: 0 0 5px 5px
+  &__tile
+    width: 50%
+    padding: 2.4rem
+    position: relative
+    &:nth-child(2n)
+      border-left: 1px solid #e6eef1
+    &.full
+      width: 100%
+
+  &__features
+    margin-top: 1.6rem
+    display: flex
+    justify-content: space-between
+
+  &__subscribe
+    border-radius: 5px
+    background-color: #d4fbf2
+    width: calc(50% - .8rem)
+    color: #23282a
+    display: flex
+    justify-content: space-between
+    padding: 1.6rem
+    &-right
+      text-align: right
+    &-title
+      margin-bottom: 1.6rem
+      h2
+        font-size: 2.6rem
+        margin: 0 0 .8rem
+      h3
+        font-size: 1.4rem
+        margin: 0
+    &-price
+      font-size: 5.6rem
+    &-btn
+      position: relative
+      z-index: 2
+      font-size: 1.8rem
+    &-end
+      font-size: 1.4rem
+      font-weight: 300
+    &-control
+      color: #018edc
+      font-size: 1.4rem
+
+  &__options
+    width: calc(50% - .8rem)
+    border-radius: 5px
+    background-color: #ffffff
+    color: #018edc
+    padding: 0 1.6rem
+  &__option
+    padding: 1.6rem 0
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    font-size: 14px
+    border-bottom: 1px solid #e6eef1
+    cursor: pointer
+
+    &:last-of-type
+      border: none
+    svg
+      margin-right: 1.6rem
+    h4
+      margin: 0
+    p
+      margin: 0
+      transition: 0.2s ease
+    &:hover p
+      color: #1b399b
+
+.socials
+  margin-top: 2.4rem
+  display: flex
+  flex-wrap: wrap
+  width: 100%
+  min-height: 10rem
+
+  .social
+    width: 50%
+    display: flex
+    height: 5rem
+    align-items: center
+    &__img
+      width: auto
+      height: 1.3rem
+    &__value
+      margin-left: 1.7rem
+      color: #018edc
+      font-size: 1.4rem
+      letter-spacing: -0.039rem
+
+  &-btn
+    text-align: right
+    margin-top: 1.8rem
+
+.full
+  .socials
+    justify-content: space-between
+  .social
+    width: 20%
+.gallery-preview
+  margin-top: 2.4rem
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  width: 100%
+  min-height: 9.7rem
+  overflow: hidden
+  &.empty
+    justify-content: center
+  .placeholder
+    color: #abbfc7
+    font-size: 1.6rem
+    letter-spacing: -0.044rem
+  &__items
+    display: flex
+    height: 100%
+    justify-content: flex-start
+    align-items: center
+  &__item
+    height: auto
+    width: calc((100% - 3.9rem) / 4)
+    margin-right: 1.3rem
+  &-controls
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 2.1rem
+
+.gallery-content-wrapper
+  width: 100%
+  display: flex
+  justify-content: center
+  margin-top: 1.6rem
+
+.gallery-wrapper
+  padding: 3.3rem 0 3.2rem
+  background: #fff
+  border-radius: 4px
+  min-height: 63.3rem
+  max-width: 100%
+  width: auto
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  position: relative
+.gallery
+  max-width: 100%
+  width: 96rem
+  display: flex
+  flex-wrap: wrap
+  padding: 0 2.4rem
+  align-items: flex-start
+  justify-content: flex-start
+  &__item
+    width: calc(100% / 7 - 1.38rem)
+    margin: 0 1.6rem 1.6rem 0
+    cursor: pointer
+    position: relative
+    align-self: flex-start
+    &:nth-child(7n)
+      margin-right: 0
+    &_plus
+      .gallery__item-image
+        background: url(./assets/img/plus.jpg) center center / 100% 100% no-repeat
+
+    &-image
+      width: 100%
+      padding-top: 100%
+
+    .check
+      height: 1.8rem
+      width: 1.8rem
+      position: absolute
+      right: .8rem
+      bottom: .8rem
+      border: 2px solid #f5f7fb
+      border-radius: 50%
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1)
+      transition: .3s ease
+      display: flex
+      justify-content: center
+      align-items: center
+
+      & > svg
+        display: block
+        opacity: 0
+        transition: .3s ease
+        width: .8rem
+        height: auto
+
+      &.selected
+        background: #e33837
+        & > svg
+          opacity: 1
+
+  &__button
+    margin-top: .8rem
+    text-align: center
+
+  &__edit
+    position: absolute
+    bottom: 0
+    left: 0
+    right: 0
+    height: 11.2rem
+    background-color: #f2f8fb
+    display: flex
+    justify-content: center
+    align-items: center
+    opacity: 0
+    pointer-events: none
+    transition: .3s ease-in
+    &.show
+      opacity: 1
+      pointer-events: all
+
+    & > button
+      margin: 0 .75rem
+
+
+.cropper
+  width: 100%
+  border-radius: 4px
+  &__body
+    width: 100%
+    border-bottom: 1px solid #e6eef1
+    background: #fff
+    padding: 2.4rem 2.4rem 0
+    display: flex
+    justify-content: center
+    align-items: center
+  &__footer
+    padding: 0 2.4rem
+    height: 8.2rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__zoom
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 2.1rem
+    width: 20.9rem
+    &-icon
+      &_sm
+        height: 1.1rem
+        width: 1.1rem
+      &_lg
+        height: 2.1rem
+        width: 2.1rem
+    input[type="range"]
+      margin: 0 1.6rem

@@ -1,0 +1,45 @@
+.pagination
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  user-select: none
+  padding: 0
+  margin: 0
+
+  li
+    list-style-type: none
+
+  &__item
+    height: 100%
+    line-height: 1.7rem
+    color: #018edc
+    font-size: 1.4rem
+    font-weight: 400
+    letter-spacing: -0.39px
+    cursor: pointer
+    a
+      border-bottom: 4px solid transparent
+    &_arrow
+      font-weight: 700
+    &.active, &:hover
+      a
+        border-bottom: 4px solid #018edc
+
+    &.disabled
+      opacity: .3
+      cursor: default
+      &:hover
+        a
+          border-bottom: 4px solid transparent
+
+    a
+      display: inline-block
+      height: 100%
+      width: 100%
+      padding: 1.6rem
+
+    &.disabled
+      a
+        cursor: default
+

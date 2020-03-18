@@ -1,0 +1,353 @@
+.audio
+  .office__top
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    height: $header-height
+    &_block
+      display: block
+  &__new
+    position: relative
+    z-index: 1
+  &__content
+    background: white
+    padding: 1.6rem
+  &__subtitle
+    margin-bottom: 1rem
+    h3
+      color: #abbfc7
+      font-size: 12px
+      font-weight: 700
+      text-transform: uppercase
+
+  &__cards
+    display: flex
+    flex-wrap: wrap
+    margin: -0.8rem
+  &__card-wr
+    padding: .8rem
+    width: 100%
+    max-width: 50%
+    cursor: pointer
+  &__card
+    display: flex
+    padding: 3.2rem 4.0rem
+    background-color: #f5f7fb
+    border-radius: 15px
+    position: relative
+    padding-right: 33%
+    cursor: pointer
+    transition: 0.2s ease-in-out
+    &:hover
+      background-color: #e6eef1
+  &__play
+    margin-right: 2.7rem
+    cursor: pointer
+    svg
+      width: 2.9rem
+      path
+        fill: #018edc
+
+    &:hover
+      opacity: .8
+    &[disabled]
+      opacity: .4
+      &:hover
+        opacity: .4
+
+  &__right
+    width: 100%
+  &__name
+    margin-bottom: 6px
+    width: 100%
+    padding-right: 1rem
+    h2
+      margin: 0
+      line-height: 1.1
+      color: #23282a
+      font-size: 2.6rem
+      @include text-overflow
+
+  &__time
+    p
+      color: #a1b0b6
+      font-size: 14px
+      font-weight: 500
+      margin: 0
+
+  &__delete
+    cursor: pointer
+    position: absolute
+    right: 4.0rem
+    top: 50%
+    transform: translateY(-50%)
+    background: white
+    width: 3.6rem
+    height: 3.6rem
+    border-radius: 50%
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: 0.2s ease
+    &:hover
+      background: #de3444
+      svg
+        path
+          fill: white
+          stroke: #de3444
+
+  &__empty
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    z-index: 1
+    padding: 20vh 0
+    &-text
+      height: 2.3rem
+      line-height: 2.3rem
+      color: #abbfc7
+      font-size: 1.8rem
+      letter-spacing: -0.05rem
+      margin: 1.5rem auto
+
+
+.album-form
+  width: 100%
+.audio-form-wrapper
+  border-top: 1px solid #e6eef1
+  padding: 2.4rem
+.audio-form
+  width: 100%
+  margin-top: 2.4rem
+  display: flex
+  &_nm
+    margin-top: 0
+  &-col
+    width: 100%
+    &_m
+      margin: 1.6rem .8rem
+    &_img
+      width: 33%
+      min-width: 31.2rem
+      margin-right: 4rem
+
+.cover
+  position: relative
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  cursor: pointer
+  &__img
+    width: 31.2rem
+    height: 36.2rem
+    border-radius: 4px
+    background: url(./assets/img/cover.jpg) center top / 31.2rem 31.2rem no-repeat
+    padding-bottom: 5rem
+
+    &.nobg
+      background: none
+
+    & > img
+      width: 31.2rem
+      height: 31.2rem
+      border-radius: 4px
+
+    .cover__button
+      position: absolute
+      bottom: 2.2rem
+      left: 0
+      right: 0
+      text-align: center
+      button
+        &:hover
+          box-shadow: none
+  &__caption
+    font-size: 1.4rem
+    margin-top: 1.6rem
+
+  &_video
+    margin-top: 2.4rem
+    height: 22.6rem
+    justify-content: flex-start
+    .cover__img
+      height: 17.6rem
+      background: url(./assets/img/cover.jpg) center center / 100% auto no-repeat
+      overflow: hidden
+      & > img
+        width: 100%
+        height: auto
+    .cover__button
+      bottom: 0
+
+  &_profile
+    width: 18rem
+    height: 30.8rem
+    .cover__img
+      height: 30.8rem
+      padding-bottom: 5rem
+      width: 100%
+      background: url(./assets/img/profile.jpg) center top / auto 25.8rem no-repeat
+      overflow: hidden
+      position: relative
+      &.nobg
+        background: none
+      &-wrapper1
+        position: relative
+        height: 25.8rem
+        width: 100%
+        border-radius: 5px
+        overflow: hidden
+      &-wrapper2
+        position: absolute
+        top: 0
+        bottom: 0
+        left: -1000px
+        right: -1000px
+        text-align: center
+        img
+          height: 25.8rem
+          width: auto
+      .cover__button
+        bottom: 0
+        margin: 0
+        & > button
+          width: 100%
+          margin: 0
+          padding: .8rem 1.6rem .7rem
+
+.audio-view
+  border-radius: 5px
+  border-top: 1px solid #dee5f4
+  background-color: #fff
+  position: relative
+  margin-top: 1.6rem
+  color: $color-text-black
+  .audio-play
+    padding: 2.4rem 3.2rem
+
+  &__table
+    display: flex
+    justify-content: space-between
+    width: 100%
+    padding: 2.4rem 3.2rem 0
+  &__cover
+    width: 40%
+    padding-right: 4%
+    display: flex
+    justify-content: center
+    align-items: center
+    & > img
+      width: 100%
+      height: auto
+  &__controls
+    height: 8rem
+    border-top: 1px solid #e6eef1
+    display: flex
+    justify-content: center
+    align-items: center
+    & > button
+      margin: 0 1.2rem
+
+  table
+    width: 60%
+    tr
+      height: 5rem
+      line-height: 5rem
+      border-bottom: 1px solid #e6eef1
+      width: 100%
+      &:last-child
+        border-bottom: 1px solid transparent
+    td
+      color: #23282a
+      font-size: 1.6rem
+      letter-spacing: -0.044rem
+      width: 65%
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      padding-right: 2rem
+      &.label
+        width: 35%
+        font-size: 12px
+        font-weight: 700
+        color: #abbfc7
+        text-transform: uppercase
+        .highlight
+          color: #c7abab
+
+.audio-play
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  border-bottom: 1px solid #e6eef1
+  &__title
+    margin-left: 1.6rem
+    color: #23282a
+    font-size: 1.8rem
+    font-weight: 400
+    letter-spacing: -0.5px
+
+.dark .my-sets
+  &__content
+    background-color: $color-dark-theme-blue
+  &__subtitle
+    h3
+      color: $color-text-dark-theme-lightblue
+  &__card
+    background: $color-dark-theme-light-bg-blue
+    &:hover
+      background: $color-dark-theme-medium-dark-blue
+  &__play
+    svg
+      path
+        fill: #02b3ea
+  &__name
+    h2
+      color: $color-white
+  &__time
+    p
+      color: $color-text-dark-theme-lightblue
+  &__delete
+    background-color: #001f54
+    transition: 0.2s ease
+    svg
+      path
+        transition: 0.2s ease
+        stroke: #001f54
+        fill: #02b3ea
+    &:hover
+      background: #de3444
+      svg
+        path
+          fill: white
+          stroke: #de3444
+
+
+
++r($small)
+  .my-sets
+    .office__top
+      display: flex
+      justify-content: space-between
+      .office__title
+        h1
+          white-space: nowrap
+
+    &__card
+      padding: 15px 33% 15px 24px
+      &-wr
+        max-width: unset
+
+    &__name
+      font-size: 26px
+
+    &__delete
+      right: 24px
+
+    &__play
+      svg
+        height: 46px

@@ -1,0 +1,309 @@
+.sidebar-wrapper
+  position: fixed
+  left: 0
+  right: 0
+  bottom: 0
+  top: 0
+  height: 100%
+  width: 100%
+  z-index: 600
+  user-select: none
+  pointer-events: none
+
+  .sidebar
+    pointer-events: all
+    background: white
+    width: 27.2rem
+    position: fixed
+    height: 100%
+    z-index: 650
+    &__row
+      display: flex
+      padding: 4.6rem 0
+      align-items: center
+    &__desktop-logo
+      width: 100%
+      padding: 0 14%
+    &__burger
+      padding: 1.1rem 3.2rem 1.1rem
+      margin-right: 1.6rem
+      cursor: pointer
+      svg
+        .stroke
+          stroke: #979797
+      &:hover
+        svg
+          .stroke
+            stroke: $color-blue
+    &__logo
+      cursor: pointer
+      width: 100%
+      padding: 0 14%
+      img, svg
+        width: 100%
+        height: auto
+      &-text
+        fill: #23282a
+    &.mobile
+      .sidebar__logo
+        display: none
+      .sidebar__close
+        display: block
+    &__list
+      padding: 0
+      margin: 0
+    &__item
+      height: 5.6rem
+      padding-left: 7.4rem
+      list-style: none
+      color: $color-text-black
+      font-size: 1.8rem
+      font-weight: 400
+      position: relative
+      display: block
+      line-height: 5.6rem
+      cursor: pointer
+      svg
+        position: absolute
+        left: 3.2rem
+        top: 50%
+        margin-top: -.25rem
+        transform: translateY(-50%)
+        &.stroke
+          stroke: #98a5aa
+        &.fill
+          fill: #98a5aa
+      &.router-link-active,
+      &:hover
+        background-color: #f2faff
+        color: #0346bc
+        & svg.stroke
+          stroke: $color-blue
+        & svg.fill
+          fill: $color-blue
+
+      &::after
+        position: absolute
+        content: ''
+        width: .6rem
+        height: .6rem
+        border-style: solid
+        border-color: rgba(0, 0, 0, 0.1)
+        border-width: 0 .2rem .2rem 0
+        right: 2.4rem
+        top: 50%
+        transform: translateY(-50%) rotate(-45deg)
+        transition: .1s ease-in
+
+      &.show:after
+        transform: translateY(-50%) rotate(45deg)
+
+      &_external
+        margin-bottom: 1.6rem
+        &.router-link-active
+          background: transparent
+          color: $color-text-black
+        &:after
+          display: none
+        svg
+          .fill
+            fill: #98a5aa
+          .stroke
+            stroke: #98a5aa
+        &:hover
+          background-color: #f2faff
+          color: #0346bc
+          svg
+            .fill
+              fill: $color-blue
+            .stroke
+              stroke: $color-blue
+
+      &-text
+        position: relative
+        display: inline-block
+      &-notification
+        position: absolute
+        top: 50%
+        right: -1rem
+        margin-top: -1rem
+        width: .8rem
+        height: .8rem
+        background-color: #ff004b
+        border-radius: 50%
+
+  .fade-mobile
+    position: fixed
+    z-index: 625
+    pointer-events: none
+    background: rgba(0,0,0,1)
+    opacity: 0
+    left: 0
+    right: 0
+    bottom: 0
+    top: 0
+    transition: opacity .3s ease-out
+
+  &.mobile
+    margin-left: -100%
+    transition: margin-left .3s ease-out
+    .sidebar
+      &__row
+        padding: 0
+        margin-bottom: 38px
+      &__logo
+        margin-top: 55px
+      &__item
+        height: 12rem
+        line-height: 12rem
+        +b(800)
+          height: 10rem
+          line-height: 10rem
+        +b(600)
+          height: 8rem
+          line-height: 8rem
+        +b(400)
+          height: 6rem
+          line-height: 6rem
+
+      &__close
+        padding: 25px
+        height: 64px
+        width: 64px
+        & > svg
+          width: 16px
+          height: 16px
+          cursor: pointer
+          .stroke
+            stroke: #23282a
+    &.open
+      margin-left: 0
+      .sidebar__close
+        display: block
+      .fade-mobile
+        opacity: .3
+        pointer-events: all
+
+.adjust-top-2
+  margin-top: -2px
+
+.sidebar-wrapper
+  .sidebar
+    &__item
+      &.artists-link
+        &:after
+          display: none
+        .arrow
+          height: 5.6rem
+          width: 5.6rem
+          display: flex
+          justify-content: center
+          align-items: center
+          position: absolute
+          right: 0
+          top: 0
+          &:after
+            content: ''
+            width: .6rem
+            height: .6rem
+            border-style: solid
+            border-color: rgba(255, 255, 255, 0.1)
+            border-width: 0 .2rem .2rem 0
+            transform: translateY(-50%) rotate(-45deg)
+            transition: .1s ease-in
+            margin-top: .7rem
+          &:hover:after
+            border-color: rgba(255, 255, 255, 0.3)
+        &.router-link-active
+          .arrow:after
+            border-color: rgba(255, 255, 255, 0.3)
+          .arrow:not(.empty)
+            background: radial-gradient(circle, rgba(255,255,255,.15) 0%, transparent 60%)
+            &:hover:after
+              border-color: rgba(255, 255, 255, 0.5)
+        &.show
+          .arrow:not(.empty)
+            background: none
+            &:after
+              transform: translateY(-50%) rotate(45deg)
+
+      &_artist
+        font-size: 1.6rem
+        .cover
+          position: absolute
+          left: 3rem
+          top: 50%
+          margin-top: -1.5rem
+          width: 3rem
+          height: 3rem
+          border-radius: 1.5rem
+          overflow: hidden
+          img
+            width: 100%
+            height: auto
+
+
+.dark .sidebar
+  background: $color-dark-theme-blue
+  &__logo-text
+    fill: $color-white
+  &__burger
+    opacity: .8
+    svg
+      .stroke
+        stroke: $color-white
+  &__item
+    color: #b3bccc
+    svg
+      &.stroke
+        stroke: #285aaf
+      &.fill
+        fill: #285aaf
+    &.router-link-active,
+    &:hover
+      background-color: #163a78
+      color: $color-white
+      & svg.stroke
+        stroke: $color-blue
+      & svg.fill
+        fill: $color-blue
+    &::after
+      border-color: rgba(255, 255, 255, 0.1)
+    &:hover::after,
+    &.router-link-active::after
+      border-color: rgba(255, 255, 255, 0.3)
+    &_external
+      &.router-link-active
+        background: transparent
+        color: #b3bccc
+      &:after
+        display: none
+      svg
+        .fill
+          fill: #285aaf
+        .stroke
+          stroke: #285aaf
+      &:hover
+        background-color: #163a78
+        color: $color-white
+        svg
+          .fill
+            fill: $color-blue
+          .stroke
+            stroke: $color-blue
+.dark .sidebar-wrapper.mobile
+    .sidebar
+      &__close
+        & > svg
+          .stroke
+            stroke: #fff
+
+.sidebar-wrapper.desktop-mini
+  .sidebar
+    width: 8rem
+    &__logo
+      display: none
+    &__item
+      &-text,
+      &:after
+        display: none
